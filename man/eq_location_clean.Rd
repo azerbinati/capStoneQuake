@@ -18,6 +18,8 @@ The column will get the first country removed and convert the rest to mixed case
 be converted in "Sicily".
 }
 \examples{
-eq_location_clean(rawNOAA)
+ \dontrun{
+ eq_location_clean(rawNOAA)
+ }
 
 }

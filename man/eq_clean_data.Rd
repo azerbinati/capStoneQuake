@@ -17,5 +17,7 @@ this function is the utility responsabile for clean up the raw data file into a 
 for fourther
 }
 \examples{
+\dontrun{
 eq_clean_data(readRawNOAA(filetabdelimited))
+}
 }

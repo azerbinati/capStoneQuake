@@ -5,8 +5,10 @@
 #' @return a data.frame with raw NOAA data
 #' @export
 #' @importFrom readr read_delim
-#'
-#' @examples readRawNOAA(file.path('~',"signif.txt"))
+#' @examples
+#'  \dontrun{
+#' readRawNOAA(file.path('~',"signif.txt"))
+#' }
 readRawNOAA <- function(filename)
 {
   readr::read_delim(filename,delim='\t')
@@ -42,7 +44,10 @@ titolize <- function(x) {
 #'
 #' @export
 #'
-#' @examples eq_clean_data(readRawNOAA(filetabdelimited))
+#' @examples
+#' \dontrun{
+#' eq_clean_data(readRawNOAA(filetabdelimited))
+#' }
 #' @importFrom dplyr mutate filter
 eq_clean_data <- function(rawNOAA)
 {
@@ -71,7 +76,10 @@ eq_clean_data <- function(rawNOAA)
 #' @export
 #' @importFrom dplyr mutate
 #'
-#' @examples eq_location_clean(rawNOAA)
+#' @examples
+#'  \dontrun{
+#'  eq_location_clean(rawNOAA)
+#'  }
 #'
 eq_location_clean<-function(rawNOAA)
 {

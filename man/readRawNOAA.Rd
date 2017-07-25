@@ -16,5 +16,7 @@ a data.frame with raw NOAA data
 Title
 }
 \examples{
+ \dontrun{
 readRawNOAA(file.path('~',"signif.txt"))
+}
 }
