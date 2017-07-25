@@ -1,0 +1,12 @@
+Package: capStoneQuake
+Type: Package
+Title: This Package has been create for Coursera CapStone
+Version: 0.1.0
+Author: Antonio Zerbinati
+Maintainer: Antonio Zerbinati (antonio.zerbinati@gmail.com)
+Description: Description is missing, still do not know what this package will do
+License: MIT + file LICENSE
+Encoding: NA
+LazyData: NA
+URL: https://github.com/azerbinati/capStoneQuake
+BugReports: https://github.com/azerbinati/capStoneQuake/issues
