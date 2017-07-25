@@ -3,10 +3,21 @@ Type: Package
 Title: This Package has been create for Coursera CapStone
 Version: 0.1.0
 Author: Antonio Zerbinati
-Maintainer: Antonio Zerbinati (antonio.zerbinati@gmail.com)
-Description: Description is missing, still do not know what this package will do
+Maintainer: Antonio Zerbinati <antonio.zerbinati@gmail.com>
+Description: Description is missing, still do not know what this package will do.
+    One day this description file will be fullfilled!
 License: MIT + file LICENSE
-Encoding: NA
-LazyData: NA
-URL: https://github.com/azerbinati/capStoneQuake
-BugReports: https://github.com/azerbinati/capStoneQuake/issues
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    testthat,
+    covr
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+Imports:
+  readr,
+  dplyr,
+  tidyr,
+  maps,
+  graphics
