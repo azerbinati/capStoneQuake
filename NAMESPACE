@@ -2,8 +2,11 @@
 
 export(eq_clean_data)
 export(eq_location_clean)
+export(geom_timeline)
 export(readRawNOAA)
 export(titolize)
+import(ggplot2)
+import(grid)
 importFrom(dplyr,filter)
 importFrom(dplyr,mutate)
 importFrom(readr,read_delim)
