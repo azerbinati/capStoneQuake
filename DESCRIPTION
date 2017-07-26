@@ -20,4 +20,5 @@ Imports:
   dplyr,
   tidyr,
   maps,
-  graphics
+  graphics,
+  ggplot2
