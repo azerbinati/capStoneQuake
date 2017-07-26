@@ -1,8 +1,13 @@
 context("check_geom_Timeline")
 
 
-test_that("multiplication works", {
-  load("~/capStoneQuake/tests/testthat/sysdata.rda")
+test_that("plot geomTimeline", {
+
+
+
+
+  #datafile <- system.file("tests","testthat","GeomDF.rda",package = "capStoneQuake")
+  load(file = "GeomDF.rda")
   expect_is(df,"data.frame")
 
   apl<- df %>% dplyr::arrange(DEATHS )%>% tail() %>%

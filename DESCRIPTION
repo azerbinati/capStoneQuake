@@ -15,6 +15,7 @@ Suggests: knitr,
     covr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+Depends: R (>= 3.1.0)
 Imports:
   readr,
   dplyr,
