@@ -7,13 +7,13 @@
 #'@import grid
 GeomTimeline<- ggproto("GeomTimeline", Geom,
                          required_aes =c("x"),
-                         default_aes = aes(colour="black",fill="black",size=2,y=0,alpha=0.75,stroke=1,shape=19),
+                         default_aes = aes( colour="black",fill="black",size=2,y=1,alpha=0.75,stroke=1,shape=19),
 
                        draw_key = function(data, params, size) {
                          pointsGrob(0.5, 0.5,
                                     pch = data$shape,
                                     gp = gpar(
-                                      col = alpha(data$colour, data$alpha),
+                                      col = alpha( data$colour, data$alpha),
                                       fill = alpha(data$fill, data$alpha),
                                       fontsize = data$size  *data$size *data$size /10,
                                       lwd = data$stroke * .stroke / 2
@@ -21,7 +21,16 @@ GeomTimeline<- ggproto("GeomTimeline", Geom,
                          )
                        },
 
-                         draw_panel = function(data, panel_scales, coord) {
+                       setup_data = function(data, params) {
+
+                         data %>%dplyr::mutate(date=lubridate::as_date(x) ) %>%
+                           dplyr::filter(lubridate::year(date) >= params$xmin & lubridate::year(date) <= params$xmax)
+
+                       },
+
+
+                         draw_panel = function(data, panel_scales, coord,xmin, xmax) {
+
 
                            coords <- coord$transform(data, panel_scales)
 
@@ -65,12 +74,12 @@ GeomTimeline<- ggproto("GeomTimeline", Geom,
 geom_timeline <- function(
   mapping = NULL, data = NULL, stat = "identity",
                            position = "identity", na.rm = FALSE,
-                           show.legend = NA, inherit.aes = TRUE, ...) {
+                           show.legend = NA, inherit.aes = TRUE, xmin=2000, xmax=3000, ...) {
   ggplot2::layer(
     geom = GeomTimeline, mapping = mapping,
     data = data, stat = stat, position = position,
     show.legend = show.legend, inherit.aes = inherit.aes,
-    params = list(na.rm = na.rm, ...)
+    params = list(na.rm = na.rm, xmin=xmin, xmax=xmax, ...)
   )
 }
 

@@ -59,7 +59,10 @@ eq_clean_data <- function(rawNOAA)
 
   rawNOAA%>%dplyr::filter(!is.na(DAY) & !is.na(MONTH) & YEAR>0) %>% #remove a.c. events and unknown dates
     dplyr::mutate(date =as.Date(paste(YEAR,MONTH,DAY,sep='/'))) %>% ##create a date column of type Date
-    dplyr::mutate(LATITUDE=as.double(LATITUDE),LONGITUDE=as.double(LONGITUDE))  #cast LNG LAT to double
+    dplyr::mutate(LATITUDE=as.double(LATITUDE),LONGITUDE=as.double(LONGITUDE)) %>%  #cast LNG LAT to double
+  dplyr::mutate(EQ_PRIMARY=as.double(EQ_PRIMARY),DEATHS=as.double(DEATHS))  #cast MAG e DEATHS to double
+
+
 
 }
 
