@@ -23,3 +23,8 @@ Imports:
   maps,
   graphics,
   ggplot2
+Collate: 
+    'geomTimelineLabel.R'
+    'geomTimeline.R'
+    'main.R'
+    'console_play.R'
