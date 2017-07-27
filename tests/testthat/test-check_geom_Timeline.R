@@ -37,7 +37,8 @@ test_that("plot geomTimelineLabel", {
     aes(
       x = date,
       size = EQ_PRIMARY,
-      colour = DEATHS
+      colour = DEATHS,
+      label= LOCALTION_NAME
     ) +
     geom_timeline_label(xmin=2000,xmax=2017, n_max = 3, angle=30, aes(by=EQ_PRIMARY),colour="gray")
 
